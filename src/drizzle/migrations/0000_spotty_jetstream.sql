@@ -5,12 +5,11 @@ CREATE TYPE "job_listings_status" AS ENUM ('draft', 'published', 'delisted');
 CREATE TYPE "job_listings_type" AS ENUM ('internship', 'part-time', 'full-time');
 CREATE TYPE "job_listing_applications_stage" AS ENUM ('denied', 'applied', 'interested', 'interviewed', 'hired');
 
-
 CREATE TABLE "users" (
 	"id" varchar PRIMARY KEY NOT NULL,
 	"name" varchar NOT NULL,
 	"email" varchar NOT NULL,
-	"password" varchar NOT NULL,
+	"imageUrl" varchar NOT NULL,
 	"createdAt" timestamp with time zone DEFAULT now() NOT NULL,
 	"updatedAt" timestamp with time zone DEFAULT now() NOT NULL,
 	CONSTRAINT "users_email_unique" UNIQUE("email")

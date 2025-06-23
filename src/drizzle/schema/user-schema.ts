@@ -6,10 +6,10 @@ import { UserNotificationSettings } from "./userNotificationSettings-schema";
 import { OrganizationUserSettings } from "./organizationUserSettings-schema";
 
 export const User = pgTable("users", {
-  id: varchar("id").primaryKey().notNull(),
-  name: varchar("name").notNull(),
-  email: varchar("email").notNull().unique(),
-  password: varchar("password").notNull(),
+  id: varchar().primaryKey().notNull(),
+  name: varchar().notNull(),
+  email: varchar().notNull().unique(),
+  imageUrl: varchar().notNull(),
   createdAt,
   updatedAt,
 })
